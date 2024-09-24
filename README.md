@@ -279,8 +279,7 @@ To improve query performance, we carried out the following optimization process:
 - **Graphical Performance Comparison**
     - A graph illustrating the comparison between the initial query execution time and the optimized query execution time after index creation.
     - **Graph view** shows the significant drop in both execution and planning times:
-      ![Performance Graph](https://github.com/Pradeep-Deep14/Spotify-Data-Analyst-Project/blob/main/Analysis%20Window.png)
-      
+      ![Performance Graph](https://github.com/Pradeep-Deep14/Spotify-Data-Analyst-Project/blob/main/Analysis%20Window.png) 
 - **Before Optimization Graph**
       ![Performance Graph](https://github.com/Pradeep-Deep14/Spotify-Data-Analyst-Project/blob/main/Query%20Plan%20Before%20Optimization.png)
   
