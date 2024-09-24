@@ -203,7 +203,7 @@ GROUP BY 1
 )
 SELECT 
 	album,
-	highest_energy - lowest_energery as energy_diff
+	highest_energy - lowest_energy as energy_diff
 FROM cte
 ORDER BY 2 DESC
 ```
