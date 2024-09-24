@@ -271,8 +271,8 @@ To improve query performance, we carried out the following optimization process:
 
 - **Performance Analysis After Index Creation**
     - After creating the index, we ran the same query again and observed significant improvements in performance:
-        - Execution time (E.T.): **0.0067 ms**
-        - Planning time (P.T.): **0.0078 ms**
+        - Execution time (E.T.): **0.0086 ms**
+        - Planning time (P.T.): **0.0052 ms**
     - Below is the **screenshot** of the `EXPLAIN` result after index creation:
       ![EXPLAIN After Index](https://github.com/Pradeep-Deep14/Spotify-Data-Analyst-Project/blob/main/Query%20After%20Optimization.png)
 
