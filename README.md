@@ -243,11 +243,24 @@ To improve query performance, we carried out the following optimization process:
 
 - **Initial Query Performance Analysis Using `EXPLAIN`**
     - We began by analyzing the performance of a query using the `EXPLAIN` function.
+      ```
+      EXPLAIN ANALYZE
+		SELECT
+		artist,
+		track,
+		views
+		FROM spotify
+		WHERE artist = 'Gorillaz'
+		AND
+		most_played_on = 'Youtube'
+		ORDER BY stream DESC LIMIT 25
+
+      ```
     - The query retrieved tracks based on the `artist` column, and the performance metrics were as follows:
-        - Execution time (E.T.): **7 ms**
-        - Planning time (P.T.): **0.17 ms**
+        - Execution time (E.T.): **3.381 ms**
+        - Planning time (P.T.): **0.0062 ms**
     - Below is the **screenshot** of the `EXPLAIN` result before optimization:
-      ![EXPLAIN Before Index](https://github.com/najirh/najirh-Spotify-Data-Analysis-using-SQL/blob/main/spotify_explain_before_index.png)
+      ![EXPLAIN Before Index](https://github.com/Pradeep-Deep14/Spotify-Data-Analyst-Project/blob/main/Query%20Before%20Optimization.png)
 
 - **Index Creation on the `artist` Column**
     - To optimize the query performance, we created an index on the `artist` column. This ensures faster retrieval of rows where the artist is queried.
@@ -258,17 +271,17 @@ To improve query performance, we carried out the following optimization process:
 
 - **Performance Analysis After Index Creation**
     - After creating the index, we ran the same query again and observed significant improvements in performance:
-        - Execution time (E.T.): **0.153 ms**
-        - Planning time (P.T.): **0.152 ms**
+        - Execution time (E.T.): **0.0067 ms**
+        - Planning time (P.T.): **0.0078 ms**
     - Below is the **screenshot** of the `EXPLAIN` result after index creation:
-      ![EXPLAIN After Index](https://github.com/najirh/najirh-Spotify-Data-Analysis-using-SQL/blob/main/spotify_explain_after_index.png)
+      ![EXPLAIN After Index](https://github.com/Pradeep-Deep14/Spotify-Data-Analyst-Project/blob/main/Query%20After%20Optimization.png)
 
 - **Graphical Performance Comparison**
     - A graph illustrating the comparison between the initial query execution time and the optimized query execution time after index creation.
     - **Graph view** shows the significant drop in both execution and planning times:
-      ![Performance Graph](https://github.com/najirh/najirh-Spotify-Data-Analysis-using-SQL/blob/main/spotify_graphical%20view%203.png)
-      ![Performance Graph](https://github.com/najirh/najirh-Spotify-Data-Analysis-using-SQL/blob/main/spotify_graphical%20view%202.png)
-      ![Performance Graph](https://github.com/najirh/najirh-Spotify-Data-Analysis-using-SQL/blob/main/spotify_graphical%20view%201.png)
+      ![Performance Graph](https://https://github.com/Pradeep-Deep14/Spotify-Data-Analyst-Project/blob/main/Analysis%20Window.png)
+      ![Performance Graph](https://github.com/Pradeep-Deep14/Spotify-Data-Analyst-Project/blob/main/Query%20Plan%20Before%20Optimization.png)
+      ![Performance Graph](https://github.com/Pradeep-Deep14/Spotify-Data-Analyst-Project/blob/main/Query%20Plan%20After%20Optimization.png)
 
 This optimization shows how indexing can drastically reduce query time, improving the overall performance of our database operations in the Spotify project.
 ---
